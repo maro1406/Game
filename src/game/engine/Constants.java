@@ -18,6 +18,8 @@ public int SLIP_PENALTY = 100;
 public int POWERUP_COST = 500;
 
 
+bhb ahmed;
+
 
 	
 }
