@@ -107,7 +107,7 @@ public class DataLoader {
 		                } else if (type.equals("Dynamo")) {
 		                    monsterss.add(new Dynamo(name, desc, role, energy)); 
 		                } else if (type.equals("MultiTasker")) {
-		                    monsterss.add(new Multitasker(name, desc, role, energy));
+		                    monsterss.add(new MultiTasker(name, desc, role, energy));
 		                } else if (type.equals("Schemer")) {
 		                    monsterss.add(new Schemer(name, desc, role, energy));
 		                }
