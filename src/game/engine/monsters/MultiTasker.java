@@ -3,7 +3,7 @@ import game.engine.*;
 
 public class MultiTasker extends Monster {
 	
-	private int normalSpeedTurns;
+	private static int normalSpeedTurns;
 
 	public int getNormalSpeedTurns() {
 		return normalSpeedTurns;

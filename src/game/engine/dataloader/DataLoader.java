@@ -9,13 +9,13 @@ import game.engine.monsters.*;
 import game.engine.cards.*;
 import game.engine.*;
 public class DataLoader {
-	private static String cards="cards.csv";
-	private static String cells="cells.csv";
-	private static String monsters="monsters.csv";
+	private static final String CARDS_FILE_NAME="cards.csv";
+	private static String CELLS_FILE_NAME="cells.csv";
+	private static final String MONSTERS_FILE_NAME="monsters.csv";
 
 	public static ArrayList<Card> readCards() throws IOException{
 		ArrayList<Card> cardss=new ArrayList<>();
-		BufferedReader br=new BufferedReader(new FileReader(cards));
+		BufferedReader br=new BufferedReader(new FileReader(CARDS_FILE_NAME));
 		String line;
 		
 		while((line=br.readLine())!=null){
@@ -30,19 +30,19 @@ public class DataLoader {
 			
 			if(type.equals("SwapperCard")){
 				lucky= true;
-				card= new SwapperCard(name,description,rarity,lucky);
+				card= new SwapperCard(name,description,rarity);
 				
 			}
 			else if(type.equals("ShieldCard")){
 				lucky= false;
-				card=new ShieldCard(name,description,rarity,lucky);
+				card=new ShieldCard(name,description,rarity);
 				
 			}
 			else if(type.equals("EnergyStealCard")) {
 
 	            int energy = Integer.parseInt(data[4]);
 	            lucky= true;
-	            card = new EnergyStealCard(name, description, rarity, lucky,energy);
+	            card = new EnergyStealCard(name, description, rarity,energy);
 			}
 	        
 	        else if(type.equals("StartOverCard")) {
@@ -55,7 +55,7 @@ public class DataLoader {
 
 	            int duration = Integer.parseInt(data[4]);
 	            lucky= false;
-	            card = new ConfusionCard(name, description, rarity,lucky, duration);
+	            card = new ConfusionCard(name, description, rarity, duration);
 		}
 			cardss.add(card);
 	}
@@ -66,7 +66,7 @@ public class DataLoader {
 
 	        ArrayList<Cell> cellss = new ArrayList<>();
 
-	        BufferedReader br = new BufferedReader(new FileReader(cells));
+	        BufferedReader br = new BufferedReader(new FileReader(CELLS_FILE_NAME));
 	        String line;
 
 	        while((line = br.readLine()) != null) {
@@ -92,7 +92,7 @@ public class DataLoader {
 }
 	 public static ArrayList<Monster> readMonsters() throws IOException {
 		        ArrayList<Monster> monsterss = new ArrayList<>();
-		        try (BufferedReader br = new BufferedReader(new FileReader(monsters))) {
+		        try (BufferedReader br = new BufferedReader(new FileReader(MONSTERS_FILE_NAME))) {
 		            String line;
 		            while ((line = br.readLine()) != null) {
 		                String[] data = line.split(",");

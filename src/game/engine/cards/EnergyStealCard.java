@@ -8,7 +8,7 @@ public class EnergyStealCard extends Card {
 		return energy;
 	}
 
-	public EnergyStealCard(String name, String description, int rarity,boolean lucky,int energy) {
+	public EnergyStealCard(String name, String description, int rarity,int energy) {
 		super(name, description, rarity, true);
 
 		this.energy=energy;
